@@ -1,3 +1,5 @@
+import com.sun.org.apache.xpath.internal.SourceTree;
+
 import java.io.*;
 import java.net.HttpURLConnection;
 import java.net.Socket;
@@ -61,8 +63,8 @@ public class ProxyThread extends Thread {
                             break;
                         case 404:
                             System.out.println("404 Page not found");
-
                         default:
+                            System.out.println(httpConnection.getResponseCode());
                             break;
                     }
                 } catch (IOException err) {
